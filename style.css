@@ -1,3 +1,6 @@
+/* ============================================== */
+/* Base Styles */
+/* ============================================== */
 body {
     font-family: 'Arial', sans-serif;
     display: flex;
@@ -8,6 +11,9 @@ body {
     margin: 0;
 }
 
+/* ============================================== */
+/* Form Container */
+/* ============================================== */
 form {
     background: #ffffff;
     padding: 30px; 
@@ -19,6 +25,9 @@ form {
     flex-direction: column;
 }
 
+/* ============================================== */
+/* Labels and Inputs */
+/* ============================================== */
 label {
     margin-bottom: 5px;
     font-weight: bold;
@@ -31,10 +40,14 @@ input {
     border: 1px solid #ccc;
     border-radius: 4px;
     width: 100%;
-    box-sizing: border-box;
+    /* Key for responsiveness: includes padding and border in the 100% width */
+    box-sizing: border-box; 
     line-height: 1.5;
 }
 
+/* ============================================== */
+/* Button Styles */
+/* ============================================== */
 button {
     background-color: #007bff;
     color: white;
@@ -52,11 +65,17 @@ button:hover {
     background-color: #0056b3;
 }
 
+/* ============================================== */
+/* Form Feedback Area (Strictly minimal) */
+/* ============================================== */
 #form-feedback {
     margin-top: 20px;
     padding: 10px;
     border-radius: 4px;
     font-weight: bold;
     line-height: 1.4;
-    display: none;
+    
+    /* Crucially, we only set 'display: none' here. */
+    /* All color and text properties are handled by JavaScript's inline style. */
+    display: none; 
 }
