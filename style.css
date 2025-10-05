@@ -10,12 +10,12 @@ body {
 
 form {
     background: #ffffff;
-    padding: 30px;
+    padding: 30px; 
     border-radius: 8px;
-    box-shadow: 0 8px 10px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     width: 100%;
     max-width: 400px;
-    display: flex;
+    display: flex; 
     flex-direction: column;
 }
 
@@ -31,8 +31,8 @@ input {
     border: 1px solid #ccc;
     border-radius: 4px;
     width: 100%;
-    box-sizing: border-box; 
-    line-height: 1.5; 
+    box-sizing: border-box;
+    line-height: 1.5;
 }
 
 button {
@@ -54,22 +54,9 @@ button:hover {
 
 #form-feedback {
     margin-top: 20px;
-    padding: 15px;
+    padding: 10px;
     border-radius: 4px;
     font-weight: bold;
     line-height: 1.4;
     display: none;
-}
-
-
-.success {
-    color: #155724;
-    background-color: #d4edda;
-    border: 1px solid #c3e6cb;
-}
-
-.error {
-    color: #721c24;
-    background-color: #f8d7da;
-    border: 1px solid #f5c6cb;
 }

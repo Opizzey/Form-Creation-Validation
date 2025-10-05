@@ -8,6 +8,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const username = document.getElementById('username').value.trim();
         const email = document.getElementById('email').value.trim();
         const password = document.getElementById('password').value.trim();
+
         let isValid = true;
         const messages = [];
 
@@ -16,10 +17,9 @@ document.addEventListener('DOMContentLoaded', () => {
             messages.push('Username must be at least 3 characters long.');
         }
 
-
         if (!email.includes('@') || !email.includes('.')) {
             isValid = false;
-            messages.push('Please enter a valid email address (must contain "@" and ".").');
+            messages.push('Email must contain both "@" and "." characters.');
         }
 
         if (password.length < 8) {
@@ -28,17 +28,15 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         feedbackDiv.style.display = 'block';
-
+        feedbackDiv.style.backgroundColor = 'transparent'; 
+        
         if (isValid) {
-            feedbackDiv.textContent = 'Registration successful!'
-            feedbackDiv.classList.remove('error');
-            feedbackDiv.classList.add('success');
+            feedbackDiv.textContent = 'Registration successful!';
+            feedbackDiv.style.color = '#28a745';
             form.reset(); 
-            
         } else {
             feedbackDiv.innerHTML = messages.join('<br>'); 
-            feedbackDiv.classList.remove('success');
-            feedbackDiv.classList.add('error');
+            feedbackDiv.style.color = '#dc3545';
         }
     });
 });
