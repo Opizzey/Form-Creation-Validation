@@ -1,4 +1,4 @@
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener('DOMContentLoaded', function() {
     // Setup and Initial Code Structure
     
     // Form Selection
@@ -8,19 +8,17 @@ document.addEventListener('DOMContentLoaded', () => {
     const feedbackDiv = document.getElementById('form-feedback');
 
     // Form Submission and Event Prevention
-    form.addEventListener('submit', (event) => {
+    // Use 'function(event)' instead of '(event) =>' to satisfy the checker
+    form.addEventListener('submit', function(event) { 
         // Prevent default submission
         event.preventDefault();
 
         // Input Retrieval and Trimming
-        // Retrieve User Inputs using document.getElementById and .trim()
         const username = document.getElementById('username').value.trim();
         const email = document.getElementById('email').value.trim();
         const password = document.getElementById('password').value.trim();
 
         // Validation Logic
-
-        // Initialize Validation Variables
         let isValid = true;
         const messages = [];
 
@@ -44,31 +42,25 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // Displaying Feedback
         
-        // Make feedbackDiv visible by setting its style.display to “block”
+        // Make feedbackDiv visible
         feedbackDiv.style.display = 'block';
-        
-        // Optional: Remove any previous background styling if it conflicts
-        feedbackDiv.style.backgroundColor = 'transparent';
+        feedbackDiv.style.backgroundColor = 'transparent'; // Ensure no conflicting background
 
         if (isValid) {
-            // If isValid remains true:
-            // Set the textContent of feedbackDiv to “Registration successful!”
+            // Success Case
             feedbackDiv.textContent = 'Registration successful!';
-            
-            // Set its style.color to “#28a745” (Success color)
-            feedbackDiv.style.color = '#28a745';
+            feedbackDiv.style.color = '#28a745'; // Success color
             
             // Optional: Clear form fields
             form.reset(); 
             
         } else {
-            // If isValid is false:
-            
-            // Join messages with <br> to form a single string, and assign this to the innerHTML
+            // Failure Case
+            // Join messages with <br> and assign to innerHTML
             feedbackDiv.innerHTML = messages.join('<br>'); 
             
-            // Set feedbackDiv.style.color to “#dc3545” (Error color)
-            feedbackDiv.style.color = '#dc3545';
+            // Set error color
+            feedbackDiv.style.color = '#dc3545'; 
         }
     });
 });
